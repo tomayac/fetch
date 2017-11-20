@@ -3073,6 +3073,9 @@ optional <i>CORS flag</i> and <i>CORS-preflight flag</i>, run these steps:
        not "<code>follow</code>" and <var>response</var>'s
        <a for=response>url list</a> has more than one item.
       </ul>
+
+     <li><p>If <var>response</var>'s <a for=response>type</a> is "<code>opaqueredirect</code>", then
+     return <var>response</var>.
     </ol>
   </ol>
 
@@ -3154,10 +3157,9 @@ optional <i>CORS flag</i> and <i>CORS-preflight flag</i>, run these steps:
    <li><p>Let <var>location</var> be the result of <a>extracting header list values</a> given
    `<code>Location</code>` and <var>actualResponse</var>'s <a for=response>header list</a>.
 
-   <li><p>If <var>location</var> is a <a for=header>value</a>, then set
-   <var>location</var> to the result of
-   <a lt="url parser">parsing</a> <var>location</var> with
-   <var>actualResponse</var>'s <a for=response>url</a>.
+   <li><p>If <var>location</var> is a <a for=header>value</a>, then set <var>location</var> to the
+   result of <a lt="url parser">parsing</a> <var>location</var> with <var>request</var>'s
+   <a for=request>current url</a>.
 
    <li><p>Set <var>actualResponse</var>'s
    <a for=response>location URL</a> to <var>location</var>.
